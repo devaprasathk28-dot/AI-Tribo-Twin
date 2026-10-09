@@ -1,0 +1,14 @@
+# Notebooks
+
+Planned notebooks:
+
+01_project_setup.ipynb
+02_data_extraction.ipynb
+03_data_audit.ipynb
+04_eda.ipynb
+05_feature_engineering.ipynb
+06_model_benchmark.ipynb
+07_virtual_experiment.ipynb
+08_optimization.ipynb
+09_uncertainty_and_explainability.ipynb
+10_experiment_planner.ipynb

@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.ipynb_checkpoints/
+.pytest_cache/
+.vscode/
+.idea/
+*.egg-info/
+dist/
+build/
+
+# Generated models
+models/**/*.pkl
+models/**/*.joblib
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# OS
+.DS_Store
+Thumbs.db
