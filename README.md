@@ -217,5 +217,4 @@ and Wear Morphology in Ceramic-Filler included Glass Fiber Reinforced Epoxy Comp
 
 Important: experimental observations, AI predictions, and AI recommendations must
 remain clearly separated throughout the project.
-#   A I - T r i b o - T w i n  
- 
+#
