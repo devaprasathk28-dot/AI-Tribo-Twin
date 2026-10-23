@@ -466,7 +466,7 @@ If you utilize AI-TriboTwin in scientific research or industrial tribology studi
 
 ## 13. License & Maintenance
 
-This project is open-source software licensed under the **[MIT License](LICENSE)**.
+This project is open-source.
 
 * **Lead Maintainer**: [Devaprasath K.](https://github.com/devaprasathk28-dot)
 * **Project Repository**: [https://github.com/devaprasathk28-dot/AI-Tribo-Twin.git](https://github.com/devaprasathk28-dot/AI-Tribo-Twin.git)
