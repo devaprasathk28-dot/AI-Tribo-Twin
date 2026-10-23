@@ -1,0 +1,23 @@
+{
+  "format_version": 2,
+  "source_kind": "synthetic",
+  "target_id": "SYNTHETIC-DEMO",
+  "artifacts": {
+    "model": {
+      "file": "model.joblib",
+      "sha256": "cc72ddc145f19ea95ecc5f05da8fd2efe7029dc9d4319945200238ad3ea68ffa"
+    },
+    "report": {
+      "file": "report.json",
+      "sha256": "ced91b2bfaafde813f590bd095121d889fddec63b87283d33c7f91550a47f445"
+    },
+    "predictions": {
+      "file": "holdout_predictions.csv",
+      "sha256": "bbe9e6d459caecef60e5983d195be10e5ac1c7493c963cc5bd352cba84252c58"
+    },
+    "plot": {
+      "file": "predictions_vs_observations.png",
+      "sha256": "4dfcc7218d56d39b8479711418c2add820d869464d31fd5697935adfe4115bbe"
+    }
+  }
+}

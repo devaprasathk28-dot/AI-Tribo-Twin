@@ -1,0 +1,1 @@
+intake_id,question_id,blocker_id,artifact_filename,artifact_sha256,received_date,source_type,source_description,location_within_source,claim_supported,traceability_status,consistency_status,review_status,review_notes

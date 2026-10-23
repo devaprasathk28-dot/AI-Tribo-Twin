@@ -1,0 +1,555 @@
+{
+  "status": "EVALUATED_EXTERNAL_COF",
+  "model_id": "TOW-TOOL-COF-CAMBRIDGE",
+  "source_kind": "external",
+  "is_ai_tribotwin_model": false,
+  "experimental_results": false,
+  "material_domain": "Carbon-fibre tow (T700 12k, 60E and 50C sizing) sliding on a glass tool",
+  "source_name": "Friction of carbon fibre tows (University of Cambridge)",
+  "source_url": "https://www.repository.cam.ac.uk/items/3039d85c-0261-46b9-b249-fec061329100",
+  "source_workbook": "TowTool_ContactLengthAndFrictionForce.xlsx",
+  "source_workbook_sha256": "b9c9af71be796d25d8d6deac6e303943dc6ad45a69909eb3c7f7a06126bc4763",
+  "processed_table": "towtool_cof_measurements.csv",
+  "processed_table_sha256": "61ee1ec23b913272cf593939ae729208db1a7c367a926c08d900d1177bb6b91f",
+  "provenance_file": "towtool_cof_provenance.json",
+  "measurement_protocol": "Tow-on-tool sliding friction under a 14-step increasing normal-load ramp",
+  "target": "coefficient_of_friction",
+  "target_definition": "Workbook 'Coefficient of Friction' = friction force per contact / total normal load",
+  "target_unit": "dimensionless",
+  "feature_columns": [
+    "normal_load_n",
+    "log10_normal_load_n",
+    "nominal_pressure_mpa",
+    "contact_width_mm",
+    "contact_area_mm2",
+    "contact_length_scanned_mm",
+    "contact_half_width_a_mm",
+    "percent_contact_length",
+    "tow_type"
+  ],
+  "feature_schema": {
+    "features": [
+      {
+        "name": "normal_load_n",
+        "unit": "N",
+        "description": "Applied normal load on the tow for this ramp step",
+        "required": true,
+        "dtype": "numeric",
+        "min": 0.07749900000000001,
+        "max": 48.35838820393226,
+        "mean": 16.917045887427022,
+        "median": 10.081330139786738,
+        "medians_by_tow_type": {
+          "T700-12k-50C": 10.145813061979341,
+          "T700-12k-60E": 10.078877957180927
+        },
+        "ranges_by_tow_type": {
+          "T700-12k-50C": {
+            "min": 0.07749900000000001,
+            "max": 48.33018843685414
+          },
+          "T700-12k-60E": {
+            "min": 0.07749900000000001,
+            "max": 48.35838820393226
+          }
+        }
+      },
+      {
+        "name": "log10_normal_load_n",
+        "unit": "log10(N)",
+        "description": "Base-10 logarithm of the applied normal load (derived from normal_load_n)",
+        "required": false,
+        "dtype": "derived",
+        "source": "normal_load_n",
+        "transformation": "log10(normal_load_n), base 10"
+      },
+      {
+        "name": "nominal_pressure_mpa",
+        "unit": "MPa",
+        "description": "Nominal contact pressure (normal load divided by contact area)",
+        "required": true,
+        "dtype": "numeric",
+        "min": 0.000441200676241272,
+        "max": 0.3434619954220046,
+        "mean": 0.1084482145258081,
+        "median": 0.06543061952037343,
+        "medians_by_tow_type": {
+          "T700-12k-50C": 0.07375205659258345,
+          "T700-12k-60E": 0.057271011023653506
+        },
+        "ranges_by_tow_type": {
+          "T700-12k-50C": {
+            "min": 0.0005575554869293818,
+            "max": 0.3434619954220046
+          },
+          "T700-12k-60E": {
+            "min": 0.000441200676241272,
+            "max": 0.26472508113624327
+          }
+        }
+      },
+      {
+        "name": "contact_width_mm",
+        "unit": "mm",
+        "description": "Measured width of the tow-on-tool contact patch",
+        "required": true,
+        "dtype": "numeric",
+        "min": 5.12985,
+        "max": 7.99644,
+        "mean": 6.489696020408163,
+        "median": 6.17535,
+        "medians_by_tow_type": {
+          "T700-12k-50C": 5.758419999999999,
+          "T700-12k-60E": 7.433415
+        },
+        "ranges_by_tow_type": {
+          "T700-12k-50C": {
+            "min": 5.12985,
+            "max": 6.57995
+          },
+          "T700-12k-60E": {
+            "min": 7.05006,
+            "max": 7.99644
+          }
+        }
+      },
+      {
+        "name": "contact_area_mm2",
+        "unit": "mm^2",
+        "description": "Measured contact area between the tow and the glass tool",
+        "required": true,
+        "dtype": "numeric",
+        "min": 121.8339375,
+        "max": 189.91545,
+        "mean": 154.13028048469388,
+        "median": 146.6645625,
+        "medians_by_tow_type": {
+          "T700-12k-50C": 136.762475,
+          "T700-12k-60E": 176.54360624999998
+        },
+        "ranges_by_tow_type": {
+          "T700-12k-50C": {
+            "min": 121.8339375,
+            "max": 156.2738125
+          },
+          "T700-12k-60E": {
+            "min": 167.438925,
+            "max": 189.91545
+          }
+        }
+      },
+      {
+        "name": "contact_length_scanned_mm",
+        "unit": "mm",
+        "description": "Contact length measured from the scanned contact image",
+        "required": true,
+        "dtype": "numeric",
+        "min": 14.887545999999999,
+        "max": 3151.0417642999987,
+        "mean": 1416.044042876326,
+        "median": 1368.9538809599994,
+        "medians_by_tow_type": {
+          "T700-12k-50C": 1163.60637885,
+          "T700-12k-60E": 1609.9913831599993
+        },
+        "ranges_by_tow_type": {
+          "T700-12k-50C": {
+            "min": 14.887545999999999,
+            "max": 2877.5295864199998
+          },
+          "T700-12k-60E": {
+            "min": 133.52814968,
+            "max": 3151.0417642999987
+          }
+        }
+      },
+      {
+        "name": "contact_half_width_a_mm",
+        "unit": "mm",
+        "description": "Contact half-width a derived from the measured contact geometry",
+        "required": true,
+        "dtype": "numeric",
+        "min": 7.144375212550991e-06,
+        "max": 4.390540877562118e-05,
+        "mean": 2.9798609758733856e-05,
+        "median": 2.9416485705306633e-05,
+        "medians_by_tow_type": {
+          "T700-12k-50C": 3.129292671669893e-05,
+          "T700-12k-60E": 2.5235446869065092e-05
+        },
+        "ranges_by_tow_type": {
+          "T700-12k-50C": {
+            "min": 1.591973532556043e-05,
+            "max": 4.390540877562118e-05
+          },
+          "T700-12k-60E": {
+            "min": 7.144375212550991e-06,
+            "max": 4.284690208619196e-05
+          }
+        }
+      },
+      {
+        "name": "percent_contact_length",
+        "unit": "%",
+        "description": "Measured contact length expressed as a percentage of the ideal length",
+        "required": true,
+        "dtype": "numeric",
+        "min": 0.2056694636878605,
+        "max": 37.625841374135575,
+        "mean": 17.321274605733624,
+        "median": 16.875609227198005,
+        "medians_by_tow_type": {
+          "T700-12k-50C": 16.1936515874799,
+          "T700-12k-60E": 17.57156763486432
+        },
+        "ranges_by_tow_type": {
+          "T700-12k-50C": {
+            "min": 0.2056694636878605,
+            "max": 37.625841374135575
+          },
+          "T700-12k-60E": {
+            "min": 1.4710366143214189,
+            "max": 32.1601803780896
+          }
+        }
+      },
+      {
+        "name": "tow_type",
+        "unit": "categorical",
+        "description": "Carbon-fibre tow sizing label (T700 12k, 60E or 50C)",
+        "required": true,
+        "dtype": "categorical",
+        "allowed_values": [
+          "T700-12k-50C",
+          "T700-12k-60E"
+        ]
+      }
+    ],
+    "request_feature_columns": [
+      "normal_load_n",
+      "nominal_pressure_mpa",
+      "contact_width_mm",
+      "contact_area_mm2",
+      "contact_length_scanned_mm",
+      "contact_half_width_a_mm",
+      "percent_contact_length",
+      "tow_type"
+    ],
+    "derived_features": [
+      "log10_normal_load_n"
+    ],
+    "categorical_features": [
+      "tow_type"
+    ],
+    "range_basis": "minimum and maximum observed in the Cambridge model-training partition only"
+  },
+  "excluded_leakage_columns": [
+    "friction_force_n",
+    "friction_force_zeroed_n",
+    "friction_force_per_contact_n",
+    "coefficient_of_friction",
+    "friction_force_over_area_mpa"
+  ],
+  "observation_count": 140,
+  "training_rows": 98,
+  "holdout_rows": 42,
+  "training_groups": 7,
+  "holdout_groups": 3,
+  "training_group_ids": [
+    "T700-12k-50C-T2",
+    "T700-12k-50C-T3",
+    "T700-12k-50C-T4",
+    "T700-12k-50C-T5",
+    "T700-12k-60E-T1",
+    "T700-12k-60E-T3",
+    "T700-12k-60E-T5"
+  ],
+  "holdout_group_ids": [
+    "T700-12k-50C-T1",
+    "T700-12k-60E-T2",
+    "T700-12k-60E-T4"
+  ],
+  "tow_types": [
+    "T700-12k-50C",
+    "T700-12k-60E"
+  ],
+  "cross_validation_folds": 5,
+  "seed": 417,
+  "model_comparison": {
+    "mean_baseline": {
+      "cv_mae_mean": 0.26935905193366916,
+      "cv_mae_std": 0.07416056180572278,
+      "cv_rmse_mean": 0.4812050132983646,
+      "cv_r2_mean": -0.013706753431285534
+    },
+    "ridge_regression": {
+      "cv_mae_mean": 0.15683073460198252,
+      "cv_mae_std": 0.04028416355940259,
+      "cv_rmse_mean": 0.23897947974019607,
+      "cv_r2_mean": 0.6943724105505007
+    },
+    "hist_gradient_boosting": {
+      "cv_mae_mean": 0.1817960732505312,
+      "cv_mae_std": 0.055268596110470636,
+      "cv_rmse_mean": 0.35820911442420905,
+      "cv_r2_mean": 0.3866305274026584
+    }
+  },
+  "selected_model": "ridge_regression",
+  "selection_basis": "lowest group cross-validation MAE on the training groups",
+  "holdout_metrics": {
+    "mae": 0.1340262990866369,
+    "rmse": 0.22628677728684243,
+    "r2": 0.7825739390762205
+  },
+  "baseline_metrics": {
+    "mae": 0.2737185820600599,
+    "rmse": 0.4862388291643156,
+    "r2": -0.0039047684228847857
+  },
+  "stratified_baseline_metrics": {
+    "mae": 0.27385861555236035,
+    "rmse": 0.4862467164258582,
+    "r2": -0.003937337289115828
+  },
+  "holdout_slices": {
+    "by_tow_type": {
+      "T700-12k-50C": {
+        "rows": 14,
+        "mae": 0.15712930112036347,
+        "rmse": 0.26054578349484764,
+        "r2": -0.7446233573979466,
+        "mean_residual": 0.15712930112036347,
+        "baseline_mae": 0.14095860014380973,
+        "baseline_rmse": 0.20084364643316946,
+        "baseline_r2": -0.03669207709477784,
+        "baseline_mean_residual": 0.037784993912584955,
+        "stratified_baseline_mae": 0.14086165387990945,
+        "stratified_baseline_rmse": 0.20078008777569123,
+        "stratified_baseline_r2": -0.036036041098947535,
+        "stratified_baseline_mean_residual": 0.03744568198893396
+      },
+      "T700-12k-60E": {
+        "rows": 28,
+        "mae": 0.12247479806977365,
+        "rmse": 0.20704228001503827,
+        "r2": 0.8715671570812011,
+        "mean_residual": 0.04742992857892238,
+        "baseline_mae": 0.34009857301818497,
+        "baseline_rmse": 0.5783365917217592,
+        "baseline_r2": -0.0021191359569148194,
+        "baseline_mean_residual": 0.026595025060246618,
+        "stratified_baseline_mae": 0.34035709638858574,
+        "stratified_baseline_rmse": 0.5783575728118258,
+        "stratified_baseline_r2": -0.0021918477082925047,
+        "stratified_baseline_mean_residual": 0.027047440958448053
+      }
+    },
+    "by_test_run": {
+      "T700-12k-50C-T1": {
+        "rows": 14,
+        "mae": 0.15712930112036347,
+        "rmse": 0.26054578349484764,
+        "r2": -0.7446233573979466,
+        "mean_residual": 0.15712930112036347,
+        "baseline_mae": 0.14095860014380973,
+        "baseline_rmse": 0.20084364643316946,
+        "baseline_r2": -0.03669207709477784,
+        "baseline_mean_residual": 0.037784993912584955,
+        "stratified_baseline_mae": 0.14086165387990945,
+        "stratified_baseline_rmse": 0.20078008777569123,
+        "stratified_baseline_r2": -0.036036041098947535,
+        "stratified_baseline_mean_residual": 0.03744568198893396
+      },
+      "T700-12k-60E-T2": {
+        "rows": 14,
+        "mae": 0.07258851867942862,
+        "rmse": 0.10710409071499524,
+        "r2": 0.9479240411669502,
+        "mean_residual": 0.0467894629559979,
+        "baseline_mae": 0.3118136308671237,
+        "baseline_rmse": 0.4729297949706909,
+        "baseline_r2": -0.015356397548410783,
+        "baseline_mean_residual": 0.058161030710554056,
+        "stratified_baseline_mae": 0.31207215423752455,
+        "stratified_baseline_rmse": 0.4729856462949622,
+        "stratified_baseline_r2": -0.015596231657316606,
+        "stratified_baseline_mean_residual": 0.0586134466087555
+      },
+      "T700-12k-60E-T4": {
+        "rows": 14,
+        "mae": 0.17236107746011872,
+        "rmse": 0.2725100460162251,
+        "r2": 0.8332168371062076,
+        "mean_residual": 0.04807039420184684,
+        "baseline_mae": 0.3683835151692462,
+        "baseline_rmse": 0.6672959131282478,
+        "baseline_r2": -5.549722989983685e-05,
+        "baseline_mean_residual": -0.004970980590060824,
+        "stratified_baseline_mae": 0.3686420385396471,
+        "stratified_baseline_rmse": 0.6672926962409446,
+        "stratified_baseline_r2": -4.585515652921757e-05,
+        "stratified_baseline_mean_residual": -0.004518564691859358
+      }
+    }
+  },
+  "leave_one_run_out_sensitivity": {
+    "description": "Leave-One-Run-Out (LOGO) cross-validation evaluated across all 10 Cambridge runs to assess sensitivity across individual test sweeps. This does NOT replace or alter the fixed holdout evaluation split.",
+    "by_run": {
+      "T700-12k-50C-T1": {
+        "tow_type": "T700-12k-50C",
+        "rows": 14,
+        "mae": 0.17271765404843142,
+        "rmse": 0.28197804502893986,
+        "r2": -1.0434507478336288,
+        "mean_residual": 0.17271765404843142
+      },
+      "T700-12k-50C-T2": {
+        "tow_type": "T700-12k-50C",
+        "rows": 14,
+        "mae": 0.1016052387894453,
+        "rmse": 0.11701251621495135,
+        "r2": 0.9098879406629155,
+        "mean_residual": -0.08411080711842714
+      },
+      "T700-12k-50C-T3": {
+        "tow_type": "T700-12k-50C",
+        "rows": 14,
+        "mae": 0.16050214193766163,
+        "rmse": 0.24308373190641472,
+        "r2": -0.38523143299337814,
+        "mean_residual": 0.012209127101597026
+      },
+      "T700-12k-50C-T4": {
+        "tow_type": "T700-12k-50C",
+        "rows": 14,
+        "mae": 0.12140444879834653,
+        "rmse": 0.15557497451786775,
+        "r2": 0.7603311586710736,
+        "mean_residual": 0.08890989353325697
+      },
+      "T700-12k-50C-T5": {
+        "tow_type": "T700-12k-50C",
+        "rows": 14,
+        "mae": 0.19927998372560515,
+        "rmse": 0.21785284486333628,
+        "r2": 0.7088276995412526,
+        "mean_residual": -0.19860438275811249
+      },
+      "T700-12k-60E-T1": {
+        "tow_type": "T700-12k-60E",
+        "rows": 14,
+        "mae": 0.12560352604971836,
+        "rmse": 0.30747128526712386,
+        "r2": 0.810091611890002,
+        "mean_residual": -0.06523581424527033
+      },
+      "T700-12k-60E-T2": {
+        "tow_type": "T700-12k-60E",
+        "rows": 14,
+        "mae": 0.07614728073833595,
+        "rmse": 0.11488142840117292,
+        "r2": 0.9400864833260977,
+        "mean_residual": 0.04336819765584562
+      },
+      "T700-12k-60E-T3": {
+        "tow_type": "T700-12k-60E",
+        "rows": 14,
+        "mae": 0.14273170858177164,
+        "rmse": 0.2553520430231743,
+        "r2": 0.848969518409076,
+        "mean_residual": -0.06775628255917156
+      },
+      "T700-12k-60E-T4": {
+        "tow_type": "T700-12k-60E",
+        "rows": 14,
+        "mae": 0.16654324103235188,
+        "rmse": 0.28674234848040614,
+        "r2": 0.81534084358948,
+        "mean_residual": 0.028431047759957456
+      },
+      "T700-12k-60E-T5": {
+        "tow_type": "T700-12k-60E",
+        "rows": 14,
+        "mae": 0.14318928993986946,
+        "rmse": 0.20214009653368425,
+        "r2": 0.8714910905172243,
+        "mean_residual": 0.07597341114515212
+      }
+    },
+    "summary_by_tow_type": {
+      "T700-12k-50C": {
+        "runs": 5,
+        "mae_mean": 0.15110189345989802,
+        "rmse_mean": 0.203100422506302,
+        "r2_mean": 0.19007292360964695,
+        "mean_residual_mean": -0.0017757030386508442
+      },
+      "T700-12k-60E": {
+        "runs": 5,
+        "mae_mean": 0.13084300926840947,
+        "rmse_mean": 0.2333174403411123,
+        "r2_mean": 0.8571959095463761,
+        "mean_residual_mean": 0.002956111951302659
+      }
+    }
+  },
+  "failure_investigation_50c": {
+    "held_out_run": "T700-12k-50C-T1",
+    "findings": [
+      "Plausible statistical contributor at low-load ramp step 0: In step 0 (normal load ~0.077 N), observed COF was 1.1636 in T1 versus 1.63 to 2.02 in training 50C sweeps. The model predicted 1.9496, producing a residual of +0.7861 and squared error of 0.6179. This single observation accounts for 65.0% of the run's total sum of squared errors (0.9504), establishing a theoretical lower bound on the run's RMSE of sqrt(0.6179 / 14) = 0.2101, which is fully consistent with the actual run RMSE of 0.2605.",
+      "Steps 3-9 and overall functional tracking: Across ramp steps 3 through 9 (loads 3.5 N to 39.2 N), model predictions track observations within an MAE of 0.0300 (errors between 0.011 and 0.051) with a correlation of r = 0.9867. Across all 14 steps of the run, the overall Pearson correlation is r = 0.9520, confirming that the model captures the functional shape of the load-friction curve.",
+      "Plausible explanation vs proven root cause: While Step 0 statistically dominates the squared error, one unusual observation alone does not prove that experimental measurement noise caused the poor score. Physical factors (e.g. sizing tack, static friction transitions) cannot be ruled out without independent specimen replication.",
+      "Holdout sample size vulnerability: The holdout partition contains only a single 50C run (14 rows), making the aggregate 50C holdout score (-0.7446) entirely dependent on that single sweep.",
+      "Sensitivity under leave-one-run-out: Across all 5 runs of 50C under LOGO, 3 runs achieve R^2 >= 0.70 (T2: 0.91, T4: 0.76, T5: 0.71), while T1 (-1.04) and T3 (-0.39) drop negative, yielding a mean R^2 of 0.1901. In contrast, 60E achieves R^2 > 0.81 across every single run (mean R^2 = 0.8572)."
+    ],
+    "implication": "Predictions for T700-12k-50C carry substantially higher uncertainty and residual risk than T700-12k-60E. Recommendations or predictions for 50C must be treated with particular caution."
+  },
+  "specimen_independence_disclosure": {
+    "labelled_runs": 10,
+    "runs_per_tow_type": 5,
+    "specimen_serial_numbers_recorded": false,
+    "statement": "The Cambridge workbook labels sweeps as Test 1 through Test 5 per tow type without recording specimen serial numbers or spool identifiers. Whether sweeps represent independent physical specimens or repeated sweeps on the same tow patch is unverified."
+  },
+  "residual_analysis": {
+    "residual_definition": "predicted coefficient of friction minus observed coefficient of friction",
+    "mean_residual": 0.08399638609273608,
+    "baseline_mean_residual": 0.030325014677692726,
+    "stratified_baseline_mean_residual": 0.030513521301943375,
+    "interpretation": "Residual summaries describe this fixed three-run holdout only; they are not an estimate of bias across independent specimens."
+  },
+  "evaluation_design": {
+    "holdout_method": "GroupShuffleSplit, preserved seed and original group holdout",
+    "preprocessing_fit_scope": "Pipeline preprocessing is fitted within each training fold and refitted on the 7 training runs; no holdout rows are used to fit preprocessing.",
+    "group_overlap": false,
+    "feature_range_scope": "training observations only",
+    "feature_scope": "Normal-load and contact measurements only; friction-derived target and friction-force columns are excluded."
+  },
+  "uncertainty_assessment": {
+    "status": "NOT_CALIBRATED",
+    "prediction_intervals_produced": false,
+    "mathematical_requirement": "Under standard split-conformal prediction at a nominal 90% confidence level (alpha = 0.10), the required calibration group count n must satisfy ceil((n+1)*0.9)/n <= 1, which requires at least n >= 9 independent calibration runs per stratum.",
+    "scientific_validity_distinction": "Meeting this mathematical floor of 9 runs is a necessary condition for computing empirical quantiles, but does NOT by itself guarantee reliable or valid prediction intervals. Scientifically defensible calibration in physical tribology requires verified specimen independence (specimen serial numbers, distinct material batches), exchangeability across environmental and testing conditions, tow-type-specific variance modeling, and separate empirical coverage validation on unseen runs.",
+    "reason": "With only 7 training and 3 held-out labelled runs total, unverified specimen independence, and strong sequential ramp autocorrelation, prediction intervals cannot be defensibly calibrated and remain unavailable."
+  },
+  "group_count_limitation": "The source contains 10 labelled runs (5 per tow type) without specimen serial numbers. Independence between runs is assumed from labels and cannot be verified.",
+  "dataset_sha256": "80b05ecd401af749251afd78011a0104612ff64377b9c19c21a2c55b261b382c",
+  "versions": {
+    "python": "3.14.2",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scikit_learn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "generated_at_utc": "2026-10-22T16:05:09.754935+00:00",
+  "caveats": [
+    "Five sequential load sweeps are labelled Test 1-5 per tow type; the workbook does not expose a specimen serial number, so independence of the sweeps is assumed from the labels rather than proven.",
+    "The first ramp steps sit near zero applied load, where the ratio response is unstable; those rows are retained and reported, not silently dropped."
+  ],
+  "interpretation": "External-data model: carbon-fibre tow-on-tool friction (Cambridge dataset). These metrics describe only that external dataset and are NOT performance estimates for AI-TriboTwin's glass-fibre/epoxy composite experiments or targets.",
+  "artifacts": {
+    "model": "model.joblib",
+    "predictions": "holdout_predictions.csv",
+    "plot": "predictions_vs_observations.png"
+  }
+}

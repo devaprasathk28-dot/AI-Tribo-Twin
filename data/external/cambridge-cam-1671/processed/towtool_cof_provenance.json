@@ -1,0 +1,53 @@
+{
+  "source_name": "Friction of carbon fibre tows (University of Cambridge)",
+  "repository_item": "https://www.repository.cam.ac.uk/items/3039d85c-0261-46b9-b249-fec061329100",
+  "workbook": "TowTool_ContactLengthAndFrictionForce.xlsx",
+  "workbook_sha256": "b9c9af71be796d25d8d6deac6e303943dc6ad45a69909eb3c7f7a06126bc4763",
+  "worksheet": "Sheet1",
+  "material_domain": "Carbon-fibre tow (T700 12k, 60E and 50C sizing) sliding on a glass tool",
+  "measurement_protocol": "Tow-on-tool sliding friction under a 14-step increasing normal-load ramp",
+  "target": "coefficient_of_friction",
+  "target_definition": "Workbook 'Coefficient of Friction' = friction force per contact / total normal load",
+  "observation_count": 140,
+  "test_run_count": 10,
+  "test_run_ids": [
+    "T700-12k-50C-T1",
+    "T700-12k-50C-T2",
+    "T700-12k-50C-T3",
+    "T700-12k-50C-T4",
+    "T700-12k-50C-T5",
+    "T700-12k-60E-T1",
+    "T700-12k-60E-T2",
+    "T700-12k-60E-T3",
+    "T700-12k-60E-T4",
+    "T700-12k-60E-T5"
+  ],
+  "tow_types": [
+    "T700-12k-50C",
+    "T700-12k-60E"
+  ],
+  "feature_columns": [
+    "normal_load_n",
+    "log10_normal_load_n",
+    "nominal_pressure_mpa",
+    "contact_width_mm",
+    "contact_area_mm2",
+    "contact_length_scanned_mm",
+    "contact_half_width_a_mm",
+    "percent_contact_length",
+    "tow_type"
+  ],
+  "excluded_leakage_columns": [
+    "friction_force_n",
+    "friction_force_zeroed_n",
+    "friction_force_per_contact_n",
+    "coefficient_of_friction",
+    "friction_force_over_area_mpa"
+  ],
+  "caveats": [
+    "Five sequential load sweeps are labelled Test 1-5 per tow type; the workbook does not expose a specimen serial number, so independence of the sweeps is assumed from the labels rather than proven.",
+    "The first ramp steps sit near zero applied load, where the ratio response is unstable; those rows are retained and reported, not silently dropped."
+  ],
+  "measurements_file": "towtool_cof_measurements.csv",
+  "measurements_sha256": "61ee1ec23b913272cf593939ae729208db1a7c367a926c08d900d1177bb6b91f"
+}

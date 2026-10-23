@@ -1,0 +1,29 @@
+{
+  "format_version": 1,
+  "model_id": "TOW-TOOL-COF-CAMBRIDGE",
+  "source_kind": "external",
+  "artifacts": {
+    "model": {
+      "file": "model.joblib",
+      "sha256": "90a010f4cc19ce5984905cfefb7254a5afe84c6039d591184c50e177150790b3"
+    },
+    "report": {
+      "file": "report.json",
+      "sha256": "05b93d97c8b3a5b43d72bafa0fd637b2c99b9050e0f2e250b456239707ded656"
+    },
+    "predictions": {
+      "file": "holdout_predictions.csv",
+      "sha256": "00f3af286d0ab5e049625c10454c2e94d6716df6a035f9117a5e62cefa55d284"
+    },
+    "plot": {
+      "file": "predictions_vs_observations.png",
+      "sha256": "12a1afc35eab0528b55de77527f5875e9a7eab03c30341e8b4245189044e291a"
+    }
+  },
+  "source": {
+    "workbook": "TowTool_ContactLengthAndFrictionForce.xlsx",
+    "workbook_sha256": "b9c9af71be796d25d8d6deac6e303943dc6ad45a69909eb3c7f7a06126bc4763",
+    "processed_measurements": "towtool_cof_measurements.csv",
+    "processed_measurements_sha256": "61ee1ec23b913272cf593939ae729208db1a7c367a926c08d900d1177bb6b91f"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "data_category": "external_experimental_data",
+  "source_name": "Data for: Effect of inter-tow angle and temperature on the static coefficient of friction of preimpregnated tows in tow-tow and tow-metal contact",
+  "source_url": "https://zenodo.org/records/14609650",
+  "doi": "10.5281/zenodo.14609650",
+  "license": "CC-BY-4.0",
+  "material_domain": "Westlake epoxy / Formosa TC780 carbon-tow towpreg; static tow-tow and tow-metal contact",
+  "source_archive": {
+    "filename": "Temperature-Measurements.7z",
+    "download_url": "https://zenodo.org/api/records/14609650/files/Temperature-Measurements.7z/content",
+    "zenodo_md5": "bb5083c34ec6b08033381a165c266495",
+    "verified_md5": "bb5083c34ec6b08033381a165c266495",
+    "sha256": "0d9d2ba86a1e062b3a9dce6cfcb0247ea3fd220c96d24688d44c935a911bf159"
+  },
+  "observed_contents": {
+    "analysis_workbook": "Analyse_Temperature.xlsm",
+    "per_test_archives": 15,
+    "reported_response": "summary friction coefficient (Reibwert)",
+    "recorded_conditions": ["temperature", "contact type", "inter-tow angle", "10 N loading", "45 rpm", "1500 steps"]
+  },
+  "qualification": {
+    "status": "POTENTIALLY_USEFUL_REQUIRES_EVIDENCE",
+    "not_ai_tribotwin_measurements": true,
+    "blocker": "The analysis workbook's response rows are not linked to per-test archive UUIDs in a machine-readable observation table; only four test dates are available for grouped validation.",
+    "required_to_train": "Authoritative workbook-to-archive run mapping, response-calculation definition, and confirmation of independent test/replicate structure."
+  },
+  "sprint5_reinspection": {
+    "date": "2026-10-12",
+    "archives": [
+      "Temperature-Measurements.7z",
+      "Inter-Tow-Angle-Measurements.7z"
+    ],
+    "findings": [
+      "Both archives carry a valid 7z signature (377abcaf271c).",
+      "The 7z headers are compressed, so archive member names and any embedded identifiers cannot be recovered by a raw byte scan (zero file-like names and zero UUID-like tokens were recoverable).",
+      "No 7z extractor is available in the current environment (no 7z/7za on PATH, no py7zr, and the offline install failed), so the internal workbooks could not be re-opened here."
+    ],
+    "status": "BLOCKED_UNCHANGED",
+    "exact_remaining_requirement": "An authoritative, machine-readable mapping from every workbook summary row to its per-test archive run identifier, plus the response-calculation definition and confirmation of the independent test/replicate structure."
+  }
+}

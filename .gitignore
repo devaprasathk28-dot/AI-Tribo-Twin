@@ -5,8 +5,14 @@ venv/
 .env
 .ipynb_checkpoints/
 .pytest_cache/
+.streamlit/secrets.toml
 .vscode/
 .idea/
+.next/
+node_modules/
+playwright-report/
+test-results/
+.env.local
 *.egg-info/
 dist/
 build/
@@ -19,6 +25,12 @@ models/**/*.joblib
 *.db
 *.sqlite
 *.sqlite3
+
+# Working imports and experiment plans may contain locally supplied records
+data/working/
+
+# Database backups can contain locally supplied experimental records
+backups/
 
 # OS
 .DS_Store
